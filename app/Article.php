@@ -6,7 +6,7 @@
  * Time: 20:53
  */
 
-namespace MonPetitPoney;
+namespace App;
 
 
 class Article

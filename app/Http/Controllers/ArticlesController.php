@@ -1,8 +1,8 @@
 <?php
 
-namespace MonPetitPoney\Http\Controllers;
+namespace App\Http\Controllers;
 
-use MonPetitPoney\Article;
+use App\Article;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller

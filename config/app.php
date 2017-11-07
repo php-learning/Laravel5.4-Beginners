@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        MonPetitPoney\Providers\AppServiceProvider::class,
-        MonPetitPoney\Providers\AuthServiceProvider::class,
-        // MonPetitPoney\Providers\BroadcastServiceProvider::class,
-        MonPetitPoney\Providers\EventServiceProvider::class,
-        MonPetitPoney\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 
