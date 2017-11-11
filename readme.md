@@ -9,6 +9,16 @@
 #Demo Laravel
 ##Création d'un petit blog
 <p>Petit projet de blog, avec utilisation de material design light</p>
+<p>
+	Pour utiliser ce projet il faut : 
+	* Cloner le projet
+	* ```bash 
+		cd Laravel5.4-Beginners
+		composer update
+		cp .env.example .env
+		php artisan key:generate
+	  ```
+
 ###Partie Articles
 - [x] Créations de routes
 - [x] Créations de pages (blade)
