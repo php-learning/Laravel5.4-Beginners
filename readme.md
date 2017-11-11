@@ -12,6 +12,7 @@
 <p>
 	Pour utiliser ce projet il faut : 
 </p>
+
 * Cloner le projet
 * ``` cd Laravel5.4-Beginners ```
 * composer update
