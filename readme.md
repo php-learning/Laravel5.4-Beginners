@@ -10,16 +10,12 @@
 <h2>Création d'un petit blog </h2>
 <p>Petit projet de blog, avec utilisation de material design light</p>
 <p>
-	
 	Pour utiliser ce projet il faut : 
 	* Cloner le projet
-	* 
-	```bash 
-		cd Laravel5.4-Beginners
-		composer update
-		cp .env.example .env
-		php artisan key:generate
-	```
+	* cd Laravel5.4-Beginners
+	* composer update
+	* cp .env.example .env
+	* php artisan key:generate
 </p>
 <h3>Partie Articles</h3>
 
