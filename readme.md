@@ -14,10 +14,10 @@
 </p>
 
 * Cloner le projet
-* ```bash cd Laravel5.4-Beginners ```
-* ```bash composer update ```
-* ```bash cp .env.example .env ```
-* ```bash php artisan key:generate ```
+* ``` cd Laravel5.4-Beginners ```
+* ``` composer update ```
+* ``` cp .env.example .env ```
+* ``` php artisan key:generate ```
 <h3>Partie Articles</h3>
 
 - [x] Créations de routes
