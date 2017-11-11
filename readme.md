@@ -12,7 +12,7 @@
 <p>
 	Pour utiliser ce projet il faut : 
 	* Cloner le projet
-	* cd Laravel5.4-Beginners
+	* ``` cd Laravel5.4-Beginners ```
 	* composer update
 	* cp .env.example .env
 	* php artisan key:generate
