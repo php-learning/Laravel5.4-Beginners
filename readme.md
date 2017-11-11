@@ -12,11 +12,11 @@
 <p>
 	Pour utiliser ce projet il faut : 
 </p>
-	* Cloner le projet
-	* ``` cd Laravel5.4-Beginners ```
-	* composer update
-	* cp .env.example .env
-	* php artisan key:generate
+* Cloner le projet
+* ``` cd Laravel5.4-Beginners ```
+* composer update
+* cp .env.example .env
+* php artisan key:generate
 <h3>Partie Articles</h3>
 
 - [x] Créations de routes
