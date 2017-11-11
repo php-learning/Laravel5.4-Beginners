@@ -6,20 +6,23 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
-# Demo Laravel
-## Création d'un petit blog
+<h1> Demo Laravel </h1>
+<h2>Création d'un petit blog </h2>
 <p>Petit projet de blog, avec utilisation de material design light</p>
 <p>
+	
 	Pour utiliser ce projet il faut : 
 	* Cloner le projet
-	* ```bash 
+	* 
+	```bash 
 		cd Laravel5.4-Beginners
 		composer update
 		cp .env.example .env
 		php artisan key:generate
-	  ```
+	```
+</p>
+<h3>Partie Articles</h3>
 
-###Partie Articles
 - [x] Créations de routes
 - [x] Créations de pages (blade)
 - [ ] Création d'un formulaire pour ajouter des articles
