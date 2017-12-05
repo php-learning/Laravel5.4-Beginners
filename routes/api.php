@@ -16,3 +16,15 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('papa', function (){
+    return response()->json(["OK"=>true]);
+});
+
+Route::get('down', function (){
+    return response()->download('css/app.css');
+});
+Route::get('file', function (){
+    return response()->file('css/app.css');
+});

@@ -10,6 +10,8 @@ namespace App\Metier;
 
 
 use App\Article;
+use Illuminate\Support\Collection;
+use Symfony\Component\HttpKernel\Tests\Controller;
 
 class MetierArticle
 {
@@ -19,52 +21,60 @@ class MetierArticle
      */
     public function __construct()
     {
-        $articles = session()->get('articles', null);
-
-        if (is_null($articles)) {
-            $this->add("mon article", "mqkjeflkqfjlnqzklf eqlfnlkqefks");
-        }
     }
 
     /**
      * Methode pour enregistrer l'article quelque part (session, bdd, fichier, ....)
+     *
+     *
      * @param $titre string Titre de l'article
      * @param $description string Description de l'article
-     * @return bool
+     * @param $categorie int id categorie associe
+     *
+     * @return bool si l'enregistrement s'est bien passé
      */
-    public function add($titre, $description)
+    public function add($titre, $description, $categorie)
     {
-        if(is_null($titre) || is_null($description)){
-            return false;
-        }
-
-        $article = new Article(uniqid(), $titre, $description);
-
-        try{
-            //on stocke dans la session
-            //un tableau d'articles avec en clé l'id
-//            session()->put('articles.'.$article->getId(), $article);
-            $article->save();
-
-        }catch(\Exception $exception){
-            return false;
-        }
-
-        return true;
+       $article = new Article();
+       $article->setTitre($titre);
+       $article->setDescription($description);
+       $article->setCategorieId($categorie);
+        return $article->save();
     }
 
     /**
-     * recuperation de l'article par l'id
+     * recuperation de l'article par l'id.
      *
-     * @param $id
-     * @return Article
+     * @param $id int id de l'article
+     *
+     * @return Article l'article demandé
      */
-    public function get($id){
-        return session()->get('articles.'.$id, null);
+    public function findById($id){
+
+
+        return Article::find($id);
     }
 
+
+    /**
+     * Permet de renvoyer une collection d'articles en fonction du titre.
+     *
+     * @param $titre string une partie du titre.
+     *
+     * @return Collection retourne une collection d'article
+     */
+    public function findByTitre($titre){
+        return Article::where('titre', 'LIKE', '%'.$titre.'%')->get();
+    }
+
+
+    /**
+     * retourne un tableau de tous les articles dans la base de donnees
+     *
+     * @return array liste des articles
+     */
     public function all(){
-        return session()->get('articles');
+        return Article::all();
     }
 
 

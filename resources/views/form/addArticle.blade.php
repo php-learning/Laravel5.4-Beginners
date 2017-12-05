@@ -20,6 +20,16 @@
         @if($errors->has('description'))
             <p class="error">{{$errors->first('description')}}</p>
         @endif
+        <p><label>Categorie : </label>
+            <select name="categorie">
+                @foreach($categories as $categorie)
+                    <option value="{{$categorie->getId()}}">{{$categorie->getTitre()}}</option>
+                @endforeach
+            </select>
+        </p>
+        @if($errors->has('description'))
+            <p class="error">{{$errors->first('description')}}</p>
+        @endif
         <p><input type="submit" value="New Article"></p>
     </form>
 @endsection
