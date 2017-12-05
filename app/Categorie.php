@@ -15,7 +15,7 @@ class Categorie extends Model
 //    private $updated_at;
 
     public function articles(){
-        return $this->hasMany('App\Article', 'nargilcorp@gmail.com');
+        return $this->hasMany('App\Article');
     }
 
     /**
