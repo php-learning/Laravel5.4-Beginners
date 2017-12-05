@@ -19,7 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/addArticle', 'ArticlesController@showForm');
 
+Route::post('/storeArticle', 'ArticlesController@store')->name('storeArticle');
 
 Route::get('/articles','ArticlesController@index')->name('articles');
 

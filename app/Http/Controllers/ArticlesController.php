@@ -3,47 +3,75 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Http\Requests\AddArticleRequest;
+use App\Metier\MetierArticle;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    private $tableauArticle = [];
-
     /**
      * ArticlesController constructor.
      */
     public function __construct()
     {
-        $this->tableauArticle = [
-            2 => new Article(2, "Titre 2", "Ma petite description"),
-            6 => new Article(6, "Titre 6", "Ma petite description"),
-            14 => new Article(14, "Titre 14", "Ma petite description"),
-
-        ];
     }
 
 
     /**
+     * Affiche le formulaiore d'ajout d'article
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showForm()
+    {
+        return view('form.addArticle');
+    }
+
+    /**
+     * Stocker en bdd l'article
+     * @param AddArticleRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function store(AddArticleRequest $request)
+    {
+        /**
+         * @var $metier MetierArticle
+         */
+        $metier = new MetierArticle();
+
+        $metier->add($request->input('titre'),$request->input('description'));
+        return view('pages.index', ["tableau" => $metier->all()]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
-        return view('pages.index', ["tableau"=>$this->tableauArticle]);
+        /**
+         * @var $metier MetierArticle
+         */
+        $metier = new MetierArticle();
+        return view('pages.index', ["tableau" => $metier->all()]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $article
+     * @param  int $article
      * @return \Illuminate\Http\Response
      */
     public function show($article)
     {
+        /**
+         * @var $metier MetierArticle
+         */
+        $metier = new MetierArticle();
         return view('pages.singleArticle',
-            ["article" => $this->tableauArticle[$article]]);
+            ["article" => $metier->get($article)]);
     }
 
 
